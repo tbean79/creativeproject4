@@ -14,9 +14,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         
         <!--Links to CSS Stylesheets-->
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        
+        
   
 </head>
 
@@ -24,23 +29,27 @@
 
 <body class="body" margin-left="20%">
   <div id="app">
-    <!--<h1>Select a City</h1>
-    <form v-on:keyup.prevent="fetchREST">
-      <input type="text" v-model="prefix">
-    </form>
-    <ul>
-      <li v-for="item in cities">
-        {{ item.name }}
-      </li>
-    </ul> -->
-    <h1>Find a Word</h1>
-    <form>
-      <input type="text" v-model="search">
-      <button v-on:click.prevent="fetchWords">Search</button>
-    </form>
-    <ul>
-        {{ result }}
-    </ul>
+    <div class="queryBanner">
+      <div class="row" >
+        <label class="label">
+          IS
+        </label>
+        <form>
+          <input class="w3-input my-input" v-model="search" v-on:submit.prevent="fetchWords" placeholder="THIS MOVIE">
+        </form>
+        <label class="label">
+        GOOD?
+        </label>
+   
+        <input v-on:click.prevent="fetchWords" type="submit" value="Find Out!"></input>
+      </div>
+    </div>
+    
+    <div class="result">
+        {{ rating }}
+      <hr class="hr">
+        {{ plot }}
+    </div>
   </div>
 
   
@@ -49,7 +58,7 @@
   
              <footer class="page-footer fixed-bottom">
         
-            <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light " style="background: rgba(0,0,0,0.4); height: 60px;">
+            <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light " style="background: rgba(0,0,0,0.4); height: 45px;">
                 <a href="https://github.com/tbean79/creativeproject4.git">Github Repo</a>
             </nav>
         
